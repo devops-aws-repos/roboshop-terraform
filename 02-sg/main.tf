@@ -120,8 +120,8 @@ resource "aws_security_group_rule" "mongodb_user" {
 resource "aws_security_group_rule" "redis_user" {
     source_security_group_id = module.user.sg_id
     type = "ingress"
-    from_port = 27017
-    to_port = 27017
+    from_port = 6379
+    to_port = 6379
     protocol = "tcp"
     security_group_id = module.redis.sg_id
 }
