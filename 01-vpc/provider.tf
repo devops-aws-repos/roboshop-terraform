@@ -1,15 +1,15 @@
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "6.4.0" # AWS provider version, not terraform version
     }
   }
 
-   backend "s3" {
-    bucket = "devops-roboshop-remote"
-    key    = "vpc"
-    region = "us-east-1"
+  backend "s3" {
+    bucket         = "devops-roboshop-remote"
+    key            = "vpc"
+    region         = "us-east-1"
     dynamodb_table = "devops-roboshop-lock"
   }
 }
